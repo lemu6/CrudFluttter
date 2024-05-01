@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "846449214829",
+    "project_id": "crudtutorial-f51ab",
+    "storage_bucket": "crudtutorial-f51ab.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:846449214829:android:978e5231963488cd940664",
+        "android_client_info": {
+          "package_name": "com.example.crud_completo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfqBfiPKJEZTBuUvu7mndyHnUKZIo8nLY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
