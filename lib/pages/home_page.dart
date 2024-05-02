@@ -17,7 +17,7 @@ class _HomePageState extends State<HomePage> {
   final TextEditingController textController = TextEditingController();
 
   // open a dialog box to add a note
-  void openNoteBox() {
+  void openNoteBox({String? docID}) {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
@@ -29,7 +29,14 @@ class _HomePageState extends State<HomePage> {
           ElevatedButton(
             onPressed: () {
               // add a new note
-              firestoreService.addNote(textController.text);
+              if (docID == null) {
+                firestoreService.addNote(textController.text);
+              }
+
+              // update an existing note
+              else {
+                firestoreService.updateNote(docID, textController.text);
+              }
 
               // clear the text controller
               textController.clear();
@@ -47,7 +54,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Notes")),
+      appBar: AppBar(title: const Text("Notes")),
       floatingActionButton: FloatingActionButton(
         onPressed: openNoteBox,
         child: const Icon(Icons.add),
@@ -75,6 +82,22 @@ class _HomePageState extends State<HomePage> {
                 // display as a list title
                 return ListTile(
                   title: Text(noteText),
+                  trailing: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                    // update button
+                    IconButton(
+                    onPressed: () => openNoteBox(docID: docID),
+                    icon: const Icon(Icons.settings),
+                   ),
+
+                   // delete button
+                    IconButton(
+                    onPressed: () => firestoreService.deleteNote(docID),
+                    icon: const Icon(Icons.delete),
+                    )
+                   ],
+                  ),
                 );
               },
             );
