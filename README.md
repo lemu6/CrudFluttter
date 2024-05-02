@@ -8,9 +8,9 @@ Create✅
 
 Read✅ 
 
-Update
+Update✅
 
-Delete
+Delete✅
 
 ## Getting Started
 
