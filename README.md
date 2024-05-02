@@ -2,6 +2,16 @@
 
 A new Flutter project.
 
+Projeto Crud utilizando flutter + firebase
+
+Create✅
+
+Read✅ 
+
+Update
+
+Delete
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
